@@ -52,3 +52,9 @@ Once you have the image file downloaded, we need to use a flashing program to pl
 ## Resources and References
 
 <a href="https://knowledge.ryangarr.com/it-systems/internet-of-things-iot/raspberry-pi/projects/technotiki" class="button button--small">Check Out The Knowledge Guide</a>
+
+Here are some guides I used to help come up with our end product:
+- <a href="https://www.circuits.dk/temperature-logger-running-on-raspberry-pi/">https://www.circuits.dk/temperature-logger-running-on-raspberry-pi/</a>
+- <a href="https://www.definit.co.uk/2018/07/monitoring-temperature-and-humidity-with-a-raspberry-pi-3-dht22-sensor-influxdb-and-grafana/">https://www.definit.co.uk/2018/07/monitoring-temperature-and-humidity-with-a-raspberry-pi-3-dht22-sensor-influxdb-and-grafana/</a>
+- <a href="https://www.terminalbytes.com/temperature-using-raspberry-pi-grafana/">https://www.terminalbytes.com/temperature-using-raspberry-pi-grafana/</a>
+- <a href="http://www.hietala.org/temperature-reading-influxdb.html">http://www.hietala.org/temperature-reading-influxdb.html</a>
