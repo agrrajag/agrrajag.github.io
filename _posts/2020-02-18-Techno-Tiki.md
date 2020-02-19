@@ -78,6 +78,9 @@ sudo apt update
 sudo apt upgrade -y
 ~~~
 
+### Breadboard Preparations
+![Diagram showing breadboard circuit of the temperature sensors, breadboard, and the raspberry pi](/images/technotiki-1/breadboard.png)
+
 ## Resources and References
 
 <a href="https://knowledge.ryangarr.com/it-systems/internet-of-things-iot/raspberry-pi/projects/technotiki" class="button button--small">Check Out The Knowledge Guide</a>
