@@ -28,6 +28,8 @@ The plan included setting up a raspberry pi with multiple DS18B20 waterproof tem
 
  From there, we would set up two applications on the Pi - one to collect and store the data, and the other to read the stored data and render a dashboard and calculations from the temperature array. Since the temperature sensors display in Celsius, we would want to run calculations to change this to Fahrenheit. We would also want to develop an average temperature readout of the cage between all of the sensors. Lastly, we would want to be able to store data over time so we can watch the efficiency of the heating, and control the heating lamp from the Pi in a future project.
 
+ ![Screenshot of Balena program showing settings to flash the SD card](/images/technotiki-1/balena.png)
+
 ## How We Did It
 
 ### Our Supply List
