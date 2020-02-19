@@ -58,3 +58,4 @@ Here are some guides I used to help come up with our end product:
 - <a href="https://www.definit.co.uk/2018/07/monitoring-temperature-and-humidity-with-a-raspberry-pi-3-dht22-sensor-influxdb-and-grafana/">https://www.definit.co.uk/2018/07/monitoring-temperature-and-humidity-with-a-raspberry-pi-3-dht22-sensor-influxdb-and-grafana/</a>
 - <a href="https://www.terminalbytes.com/temperature-using-raspberry-pi-grafana/">https://www.terminalbytes.com/temperature-using-raspberry-pi-grafana/</a>
 - <a href="http://www.hietala.org/temperature-reading-influxdb.html">http://www.hietala.org/temperature-reading-influxdb.html</a>
+- <a href="https://ainsey11.com/2019/04/07/raspberry-pi-temperature-sensor-that-logs-to-grafana/">https://ainsey11.com/2019/04/07/raspberry-pi-temperature-sensor-that-logs-to-grafana/</a>
