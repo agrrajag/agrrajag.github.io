@@ -40,15 +40,43 @@ The plan included setting up a raspberry pi with multiple DS18B20 waterproof tem
 - <a href="https://www.amazon.com/gp/product/B07GS1Z3M3">Dupont Connector and Crimping Kit </a>
 
 ### Operating System Preparations
+#### Raspbian
 For those unfamiliar with Raspberry Pi's and loading up Raspbian Linux, you first have to flash the Raspbian image file onto the SD card before you are able to fire up the operating system. You can download the Raspbian image from the Raspberry Pi official site. There are a few options, including one with a GUI and one without. If you don't need the GUI front-end, the Lite version will require less resources to run your Pi.
 
 <a href="https://www.raspberrypi.org/downloads/raspbian/" class="button button--small">Download Raspbian</a>
+
+#### Balena
 
 Once you have the image file downloaded, we need to use a flashing program to place it on the SD card. Balena Etcher is an easy program only requiring you to select the image file and SD card when inserted.
 
 <a href="https://www.balena.io/etcher/" class="button button--small">Download Balena Etcher</a>
 
 ![Screenshot of Balena program showing settings to flash the SD card](/images/technotiki-1/balena.png)
+
+#### Raspi-Config and System Updates
+
+We have the SD card flashed and the Raspberry Pi loaded up in its case. Let's put the two together, test the Pi to make sure it is not dead-on-arrival, connect it to the network to run updates, and update some configuration options.
+
+~~~
+sudo raspi-config
+~~~
+- Set Password
+- Set Network Options (WiFi if needed)
+- Set Localization Options
+    * EN-US UTF-8
+    * US timezone
+    * US WiFi frequency Channels
+    * Appropriate Keyboard Layout
+- Set Interfacing Options
+    * Enable SSH
+    * Enable 1-Wire
+
+Once you have everything set inside of raspi-config, you can select Finish. We will then move to updating our software on the Pi.
+
+~~~
+sudo apt update
+sudo apt upgrade -y
+~~~
 
 ## Resources and References
 
