@@ -51,7 +51,7 @@ Once you have the image file downloaded, we need to use a flashing program to pl
 
 <a href="https://www.balena.io/etcher/" class="button button--small">Download Balena Etcher</a>
 
-![Screenshot of Balena program showing settings to flash the SD card](/images/technotiki-1/balena.png)
+![Screenshot of Balena program showing settings to flash the SD card](/images/technotiki-1/balena.PNG)
 
 #### Raspi-Config and System Updates
 
