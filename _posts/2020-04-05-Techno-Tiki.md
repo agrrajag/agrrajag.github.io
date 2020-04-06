@@ -103,6 +103,13 @@ sudo apt upgrade -y
 *This documentation is out of date*
 ![Diagram showing breadboard circuit of the temperature sensors, breadboard, and the raspberry pi](/images/technotiki-1/breadboard.png)
 
+### Testing the Sensors
+Here is where the project gets a little tricky and took me about a day to troubleshoot. 
+
+Two things to note:
+1. Many of the blogs referencing these types of connectors suggested running modprobe. In the latest Raspbian image, you do NOT need to run this. Simply enabling the 1-wire interface in raspi-config will enable everything needed.
+2. When we go to test the data, you want to see folder names starting with 28-. If you see 00-, you have bad data. In my situation, we had bad wires connecting to the breadboard. I had to put connectors on a new wire and it started working.
+
 ## Resources and References
 
 <a href="https://knowledge.ryangarr.com/it-systems/internet-of-things-iot/raspberry-pi/projects/technotiki" class="button button--small">Check Out The Knowledge Guide</a>
