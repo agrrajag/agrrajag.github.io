@@ -54,7 +54,9 @@ The plan included setting up a raspberry pi with multiple DS18B20 waterproof tem
 ### Operating System Preparations
 
 #### Raspberry Pi Imager
-This documentation originally suggested downloading Raspbian and then Balena etcher to flash the SD card. Since the original draft of this document, the curators of Raspberry Pi and Raspbian have released a program called the Raspberry Pi Imager which does all of the work needed for Balena for you. You just need to download the imager from <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a>, select which Operating System you would like (either full or lite will work), the SD card you would like to use, then select flash. After a few minutes, it will cache the most current version of Raspbian and prepare the SD card for you.
+This documentation originally suggested downloading Raspbian and then Balena etcher to flash the SD card. Since the original draft of this document, the curators of Raspberry Pi and Raspbian have released a program called the Raspberry Pi Imager which does all of the work needed for Balena for you. You just need to download the imager, select which Operating System you would like (either full or lite will work), the SD card you would like to use, then select flash. After a few minutes, it will cache the most current version of Raspbian and prepare the SD card for you.
+
+<a href="https://www.raspberrypi.org/downloads/" class="button button--small">Download Raspberry Pi Imager</a>
 
 #### Raspbian
 *This documentation is no longer needed, but good to have in case you want to go this route instead of the Raspberry Pi Imager*
