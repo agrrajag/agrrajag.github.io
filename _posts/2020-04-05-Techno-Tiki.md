@@ -107,6 +107,7 @@ sudo apt upgrade -y
 Here is where the project gets a little tricky and took me about a day to troubleshoot. 
 
 Two things to note:
+
 1. Many of the blogs referencing these types of connectors suggested running modprobe. In the latest Raspbian image, you do NOT need to run this. Simply enabling the 1-wire interface in raspi-config will enable everything needed. I did not need to modify anything in /etc/modules or /boot/config.
 
 2. When we go to test the data, you want to see folder names starting with 28-. If you see 00-, you have bad data. In my situation, we had bad wires connecting to the breadboard. I had to put connectors on a new wire and it started working.
