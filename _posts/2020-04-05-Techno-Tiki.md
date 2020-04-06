@@ -12,7 +12,7 @@ excerpt: The High-Tech Lifestyle of a Low-Tech Hedgehog
 > The High-Tech Lifestyle of a Low-Tech Hedgehog
 
 ## The Issue
-Tiki, the wonderfully sassy little hedgehog this project is named after, passed away recently after some medical complications. While her spunky little self was with us, my fiancée andI were brainstorming ideas on how to make her home more comfortable and include monitoring data-points to ensure we have a happy hedgehog. With a new hedgehog - who has yet to be named - on the way, we decided it was fitting to continue our project and name it after our sweet sassy little Tiki...
+Tiki, the wonderfully sassy little hedgehog this project is named after, passed away recently after some medical complications. While her spunky little self was with us, my fiancée and I were brainstorming ideas on how to make her home more comfortable and include monitoring data-points to ensure we have a happy hedgehog. With a new hedgehog - who has yet to be named - on the way, we decided it was fitting to continue our project and name it after our sweet and sassy little Tiki...
 
 ## The Project
 
