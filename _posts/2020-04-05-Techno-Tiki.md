@@ -1,6 +1,6 @@
 ---
 title: TechnoTiki - Part 1
-date: 2020-02-18 00:00:00
+date: 2020-04-05 00:00:00
 featured_image: '/images/technotiki-1/tiki.jpg'
 excerpt: The High-Tech Lifestyle of a Low-Tech Hedgehog
 ---
