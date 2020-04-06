@@ -58,7 +58,7 @@ This documentation originally suggested downloading Raspbian and then Balena etc
 
 <a href="https://www.raspberrypi.org/downloads/" class="button button--small">Download Raspberry Pi Imager</a>
 
-![Screenshot of Raspbery Pi Imager program](/images/technotiki-1/pi-imager.PNG)
+![Screenshot of Raspbery Pi Imager program](/images/technotiki-1/pi-imager.png)
 
 #### Raspbian
 *This documentation is no longer needed, but good to have in case you want to go this route instead of the Raspberry Pi Imager*
