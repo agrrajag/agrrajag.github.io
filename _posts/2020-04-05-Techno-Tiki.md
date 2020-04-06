@@ -17,9 +17,14 @@ Tiki, the wonderfully sassy little hedgehog this project is named after, passed 
 ## The Project
 
 TechnoTiki is planned to have multiple phases:
-- Phase 1 will look at temperature logging from multiple probes inside the cage. With our original hedgehog setup, our visual temperature sensor and heating element probe did not align the best and could vary by multiple degrees. This phase will give us a dashboard we can log into remotely on our phones or laptops to see the temperatures in three to five different spots in the cage as well as the average cage temperature of all the probes.
-- Phase 2 will find a way to log her activity on the wheel. I am still brainstorming exactly what we want this to look like - if it is yards-per-day or total miles. There have been other projects that have also posted these statistics to Twitter. We will see what this looks like in the future
-- Phase 3 will look at bringing automation into the mix by connecting the heating element to the Pi to help keep the average cage temperature aligned. Not sure how we will do this quite yet.
+
+### Phase 1 
+This will look at temperature logging from multiple probes inside the cage. With our original hedgehog setup, our visual temperature sensor and heating element probe did not align the best and could vary by multiple degrees. This phase will give us a dashboard we can log into remotely on our phones or laptops to see the temperatures in three to five different spots in the cage as well as the average cage temperature of all the probes.
+### Phase 2 
+This will find a way to log her activity on the wheel. I am still brainstorming exactly what we want this to look like - if it is yards-per-day or total miles. There have been other projects that have also posted these statistics to Twitter. We will see what this looks like in the future
+
+### Phase 3
+This will look at bringing automation into the mix by connecting the heating element to the Pi to help keep the average cage temperature aligned. Not sure how we will do this quite yet.
 
 ## Phase 1 - The Plan
 
