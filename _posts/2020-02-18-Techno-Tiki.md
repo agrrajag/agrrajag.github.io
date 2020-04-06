@@ -12,11 +12,16 @@ excerpt: The High-Tech Lifestyle of a Low-Tech Hedgehog
 > The High-Tech Lifestyle of a Low-Tech Hedgehog
 
 ## The Issue
-Tiki, our wonderful little hedgehog, has a fairly wide cage to run, explore, and tunnel around in. While her mom was out on a trip to Disney World, we moved one of the temperature sensors to be within camera view so we could monitor the temperature in the cage next to the food and water levels. I would be able to swing by and top off whatever she needed. We noticed that the temperature sensor on the opposite end of the cage was a few degrees lower than the probe controlling the heating lamp. 
+Tiki, the wonderfully sassy little hedgehog this project is named after passed away recently after some medical complications. While her spunky little self was with us, my fiancée andI were brainstorming ideas on how to make her home more comfortable and include monitoring data-points to ensure we have a happy hedgehog. With a new hedgehog - who has yet to be named - on the way, we decided it was fitting to continue our project and name it after our sweet sassy little Tiki...
 
-Our idea was to set up some kind of system that could monitor the temperature in multiple locations in the cage and report it onto a dashboard we can access from our phones, a laptop, or a local screen close to the cage.
+## The Project
 
-## The Plan
+TechnoTiki is planned to have multiple phases:
+- Phase 1 will look at temperature logging from multiple probes inside the cage. With our original hedgehog setup, our visual temperature sensor and heating element probe did not align the best and could vary by multiple degrees. This phase will give us a dashboard we can log into remotely on our phones or laptops to see the temperatures in three to five different spots in the cage as well as the average cage temperature of all the probes.
+- Phase 2 will find a way to log her activity on the wheel. I am still brainstorming exactly what we want this to look like - if it is yards-per-day or total miles. There have been other projects that have also posted these statistics to Twitter. We will see what this looks like in the future
+- Phase 3 will look at bringing automation into the mix by connecting the heating element to the Pi to help keep the average cage temperature aligned. Not sure how we will do this quite yet.
+
+## Phase 1 - The Plan
 
 The plan included setting up a raspberry pi with multiple DS18B20 waterproof temperature sensors with 3-meters of wire. We would connect the temperature sensors to a breadboard and over to the Pi's GPIO input connections.
 
@@ -24,7 +29,9 @@ The plan included setting up a raspberry pi with multiple DS18B20 waterproof tem
 
 *Source: <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=167896">https://www.raspberrypi.org/forums/viewtopic.php?t=167896</a>*
  
- Since these are digital data feeds, we can place multiple sensors on the same one-wire input pin circuit. Power is sent to the temperature sensors using the 3.3v power pin to the power feeds on the sensors. For data, a 4.7k ohm resister is placed between the 3.3v power feeds and the data lines of the first sensor in the series. The rest of the data lines connect to that same feed without needing any additional resistors. The data line then connects back to the GPIO4 pin on the raspberry Pi. The ground lines go back to the ground pin on the Pi.
+ Since these are digital data feeds, we can place multiple sensors on the same one-wire input pin circuit. Power is sent to the temperature sensors using the 5v power pin to the power feeds on the sensors. For data, a 4.7k ohm resister is placed between the 5v power feeds and the data lines of the first sensor in the series. The rest of the data lines connect to that same feed without needing any additional resistors. The data line then connects back to the GPIO4 pin on the raspberry Pi. The ground lines go back to the ground pin on the Pi.
+
+ I originally mentioned connecting the sensor voltage wire to the 3.3v pin, however, this appeared to not be enough voltage with the amount of wire we had being used. Switching to the 5v allowed data to pass.
 
  From there, we would set up two applications on the Pi - one to collect and store the data, and the other to read the stored data and render a dashboard and calculations from the temperature array. Since the temperature sensors display in Celsius, we would want to run calculations to change this to Fahrenheit. We would also want to develop an average temperature readout of the cage between all of the sensors. Lastly, we would want to be able to store data over time so we can watch the efficiency of the heating, and control the heating lamp from the Pi in a future project.
 
@@ -40,13 +47,18 @@ The plan included setting up a raspberry pi with multiple DS18B20 waterproof tem
 - <a href="https://www.amazon.com/gp/product/B07GS1Z3M3">Dupont Connector and Crimping Kit </a>
 
 ### Operating System Preparations
+
+#### Raspberry Pi Imager
+This documentation originally suggested downloading Raspbian and then Balena etcher to flash the SD card. Since the original draft of this document, the curators of Raspberry Pi and Raspbian have released a program called the Raspberry Pi Imager which does all of the work needed for Balena for you. You just need to download the imager from <a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a>, select which Operating System you would like (either full or lite will work), the SD card you would like to use, then select flash. After a few minutes, it will cache the most current version of Raspbian and prepare the SD card for you.
+
 #### Raspbian
+*This documentation is no longer needed, but good to have in case you want to go this route instead of the Raspberry Pi Imager*
 For those unfamiliar with Raspberry Pi's and loading up Raspbian Linux, you first have to flash the Raspbian image file onto the SD card before you are able to fire up the operating system. You can download the Raspbian image from the Raspberry Pi official site. There are a few options, including one with a GUI and one without. If you don't need the GUI front-end, the Lite version will require less resources to run your Pi.
 
 <a href="https://www.raspberrypi.org/downloads/raspbian/" class="button button--small">Download Raspbian</a>
 
 #### Balena
-
+*This documentation is no longer needed, but good to have in case you want to go this route instead of the Raspberry Pi Imager*
 Once you have the image file downloaded, we need to use a flashing program to place it on the SD card. Balena Etcher is an easy program only requiring you to select the image file and SD card when inserted.
 
 <a href="https://www.balena.io/etcher/" class="button button--small">Download Balena Etcher</a>
@@ -79,6 +91,7 @@ sudo apt upgrade -y
 ~~~
 
 ### Breadboard Preparations
+*This documentation is out of date*
 ![Diagram showing breadboard circuit of the temperature sensors, breadboard, and the raspberry pi](/images/technotiki-1/breadboard.png)
 
 ## Resources and References
