@@ -155,6 +155,20 @@ SHOW DATABASES
 exit
 ~~~
 
+#### Start temporary data collection
+
+**This is currently being worked on. I am having issues finding a way to have the Raspberry Pi automatically start the script at reboot. Cronjobs did not seem to work. For now, we can use a manual trigger to get the program running. The following code will send the data to a shard named test1. You can go back later and modify Influx and Grafana to use another shard after you do your testing.**
+
+If connected through VNC and you want to view the raw data going into the database:
+~~~
+python3 /home/pi/templogger.py -db=temp_logger_db -sn=test1
+~~~
+
+If you are SSH and want the script to persist outside your session:
+~~~
+nohup python3 /home/pi/templogger.py -db=temp_logger_db -sn=test1
+~~~
+
 ### Grafana
 #### Installation
 ~~~
@@ -169,7 +183,7 @@ sudo /bin/systemctl start grafana-server
 You should be able to test your connection to the server by opening a browser and going to the IP of your Pi port 3000.
 
 
-nohup python3 /home/pi/templogger.py -db=temp_logger_db -sn=test1
+
 
 
 ## Resources and References
