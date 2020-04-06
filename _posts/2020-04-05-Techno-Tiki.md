@@ -313,9 +313,32 @@ sudo /bin/systemctl start grafana-server
 
 We are going to go ahead and install the plugin Blendstat on Grafana which beautifully creates an average of all the different datapoints
 
+~~~
+sudo grafana-cli plugins install farski-blendstat-panel
+~~~
 
 #### Configuration
-You should be able to test your connection to the server by opening a browser and going to the IP of your Pi port 3000. We will spend time later creating a reverse proxy over HTTPS and locking down this unsecure port.
+You should be able to test your connection to the server by opening a browser and going to the IP of your Pi port 3000. We will spend time later creating a reverse proxy over HTTPS and locking down this insecure port.
+
+##### Setting Up The Dashboard
+
+###### Line Graph
+
+- Log in to Grafana
+- Select the + button
+- Select Add Query
+- Select "select measurement" and change to test1
+- Where it says field(value), select the word "value"
+- Change this to the temperature probe you want to monitor
+- Select the + button to the right of field and choose Selectors > last
+- Select the + button and select Math -> math
+- In math, change the formula to "*1.8+32"
+- Change Group By to be time(10s), fill(linear)
+- Change Alias to Probe 1
+- Select the duplicate button at the top of that section and follow these steps for probes 2 and 3
+- After you have added the queries, go on the left to the graph icon for Visualization
+- Change draw mode to lines, Left Y Unit to Temperature -> Fahrenheit. You can also use this screen to add thresholds.
+- When complete, hit the <- button at the top left of the screen
 
 
 
