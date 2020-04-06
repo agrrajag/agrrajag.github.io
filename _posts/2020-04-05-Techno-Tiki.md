@@ -108,7 +108,25 @@ Here is where the project gets a little tricky and took me about a day to troubl
 
 Two things to note:
 1. Many of the blogs referencing these types of connectors suggested running modprobe. In the latest Raspbian image, you do NOT need to run this. Simply enabling the 1-wire interface in raspi-config will enable everything needed.
+
 2. When we go to test the data, you want to see folder names starting with 28-. If you see 00-, you have bad data. In my situation, we had bad wires connecting to the breadboard. I had to put connectors on a new wire and it started working.
+
+To test the sensors:
+
+~~~
+cd /sys/bus/w1/devices
+ls
+~~~
+
+In here, you should find one or multiple folders starting with 28-. This means the Pi has registered the probe and the number after the dash is the serial number of the probe. Now, let's take a look at the data being received. Change the xxxxx to the serial of the probe you want to connect to.
+
+~~~
+cd 28-xxxxxxxxxxxx 
+cat w1_slave
+~~~
+
+On the second line, you should see t=xxxxx. This is the temperature in Celsius. For mine at the time of writing, mine showed t=24500, meaning it is 24.500 degrees C, or 76.1 degrees F.
+
 
 ## Resources and References
 
