@@ -162,7 +162,9 @@ nano temperature.py
 ~~~
 
 Copy and paste your temperature python script. We have used a modified version of the one Terje posted on Circuits.dk site.
+
 <a href="https://www.circuits.dk/temperature-logger-running-on-raspberry-pi/" class="button button--small">Circuits.dk - "Temperature logger running on Raspberry Pi"</a>
+
 ~~~
 # -*- coding: utf-8 -*-
 import os
