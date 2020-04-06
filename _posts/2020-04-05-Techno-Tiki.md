@@ -128,6 +128,48 @@ cat w1_slave
 
 On the second line, you should see t=xxxxx. This is the temperature in Celsius. For mine at the time of writing, mine showed t=24500, meaning it is 24.500 degrees C, or 76.1 degrees F.
 
+### InfluxDB
+#### Installation
+~~~
+cd /home/pi/
+wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+echo "deb https://repos.influxdata.com/debian buster stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+sudo apt update
+sudo apt install influxdb
+sudo systemctl unmask influxdb
+sudo systemctl enable influxdb
+sudo systemctl start influxdb
+~~~
+
+Install Influx python libraries
+~~~
+python3 -m pip install influxdb
+~~~
+
+#### Configuration
+Create the database and use show databases to confirm creation
+~~~
+CREATE DATABASE temp_logger_db
+SHOW DATABASES
+exit
+~~~
+
+### Grafana
+#### Installation
+~~~
+sudo apt-get install -y adduser libfontconfig1
+wget https://dl.grafana.com/oss/release/grafana_6.7.2_armhf.deb
+sudo dpkg -i grafana_6.7.2_armhf.deb
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable grafana-server
+sudo /bin/systemctl start grafana-server
+~~~
+
+You should be able to test your connection to the server by opening a browser and going to the IP of your Pi port 3000.
+
+
+nohup python3 /home/pi/templogger.py -db=temp_logger_db -sn=test1
+
 
 ## Resources and References
 
@@ -139,3 +181,5 @@ Here are some guides I used to help come up with our end product:
 - <a href="https://www.terminalbytes.com/temperature-using-raspberry-pi-grafana/">https://www.terminalbytes.com/temperature-using-raspberry-pi-grafana/</a>
 - <a href="http://www.hietala.org/temperature-reading-influxdb.html">http://www.hietala.org/temperature-reading-influxdb.html</a>
 - <a href="https://ainsey11.com/2019/04/07/raspberry-pi-temperature-sensor-that-logs-to-grafana/">https://ainsey11.com/2019/04/07/raspberry-pi-temperature-sensor-that-logs-to-grafana/</a>
+- <a href="https://pimylifeup.com/raspberry-pi-influxdb/">https://pimylifeup.com/raspberry-pi-influxdb/</a>
+- <a href="https://grafana.com/grafana/download?platform=arm">https://grafana.com/grafana/download?platform=arm</a>
