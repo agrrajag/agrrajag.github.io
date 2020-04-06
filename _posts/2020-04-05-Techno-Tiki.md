@@ -58,6 +58,8 @@ This documentation originally suggested downloading Raspbian and then Balena etc
 
 <a href="https://www.raspberrypi.org/downloads/" class="button button--small">Download Raspberry Pi Imager</a>
 
+![Screenshot of Raspbery Pi Imager program](/images/technotiki-1/pi-imager.PNG)
+
 #### Raspbian
 *This documentation is no longer needed, but good to have in case you want to go this route instead of the Raspberry Pi Imager*
 
@@ -100,7 +102,6 @@ sudo apt upgrade -y
 ~~~
 
 ### Breadboard Preparations
-*This documentation is out of date*
 ![Diagram showing breadboard circuit of the temperature sensors, breadboard, and the raspberry pi](/images/technotiki-1/breadboard.png)
 
 ### Testing the Sensors
@@ -141,7 +142,7 @@ sudo systemctl enable influxdb
 sudo systemctl start influxdb
 ~~~
 
-Install Influx python libraries
+**Install Influx python libraries**
 ~~~
 python3 -m pip install influxdb
 ~~~
