@@ -60,12 +60,14 @@ This documentation originally suggested downloading Raspbian and then Balena etc
 
 #### Raspbian
 *This documentation is no longer needed, but good to have in case you want to go this route instead of the Raspberry Pi Imager*
+
 For those unfamiliar with Raspberry Pi's and loading up Raspbian Linux, you first have to flash the Raspbian image file onto the SD card before you are able to fire up the operating system. You can download the Raspbian image from the Raspberry Pi official site. There are a few options, including one with a GUI and one without. If you don't need the GUI front-end, the Lite version will require less resources to run your Pi.
 
 <a href="https://www.raspberrypi.org/downloads/raspbian/" class="button button--small">Download Raspbian</a>
 
 #### Balena
 *This documentation is no longer needed, but good to have in case you want to go this route instead of the Raspberry Pi Imager*
+
 Once you have the image file downloaded, we need to use a flashing program to place it on the SD card. Balena Etcher is an easy program only requiring you to select the image file and SD card when inserted.
 
 <a href="https://www.balena.io/etcher/" class="button button--small">Download Balena Etcher</a>
