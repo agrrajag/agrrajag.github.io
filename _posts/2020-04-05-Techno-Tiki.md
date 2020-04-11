@@ -340,10 +340,19 @@ You should be able to test your connection to the server by opening a browser an
 - Change draw mode to lines, Left Y Unit to Temperature -> Fahrenheit. You can also use this screen to add thresholds.
 - When complete, hit the <- button at the top left of the screen
 
+**More details to come about setting up the graphs**
 
+## Cyber Security and Online Access
+Since this is a tech blog, we also have to mention the security aspect of this project. For the previous aspects of the project, this project was all managed internally on the local network. The default configuration of a raspberry pi has the firewall (ufw) disabled, and Grafana using HTTP as its default protocol. As I am learning cybersecurity and how to effectively deploy tools in my home and in the workplace, it's always good to practice your techniques.
 
+### Reverse NGINX HTTPS proxy
+Grafana by default runs HTTP on port 3000. This means you have an unencrypted session that requires a login (viewable in plaintext to a network sniffer) when you are using the service. We can set up NGINX to host an encrypted session between our computer and the raspberry pi. This will allow us to use https://hostname.domain.tld instead of http://hostname.domain.tld:3000. For this section of the project, we used a guide provided by the wonderful people over at DigitalOcean:
 
+<a href="https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-with-ssl-as-a-reverse-proxy-for-jenkins" class="button button--small">Digital Ocean - "How To Configure Nginx with SSL as a Reverse Proxy for Jenkins"</a>
 
+**Note: HTTP 301 redirect is broken in this current draft. I believe it is due to the lack of the hostname in our DNS and using the IP address instead. More troubleshooting should resolve this.**
+
+#### Installation
 
 
 ## Resources and References
