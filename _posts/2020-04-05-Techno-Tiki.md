@@ -354,6 +354,66 @@ Grafana by default runs HTTP on port 3000. This means you have an unencrypted se
 
 #### Installation
 
+First, you are going to want to install NGINX and create your own certificate and key. While a self-signed certificate is not best practice, it is helpful to deploy an HTTPS server quickly. I plan to come back and update this once I figure out Let's Encrypt and the automation behind that. To switch from a self-signed to a trusted certificate, you would just need to update /etc/nginx/cert.key with the private key, and /etc/nginx/cert.crt with the trusted certificate chain.
+
+~~~
+sudo apt update
+sudo apt install nginx
+cd /etc/nginx
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/cert.key -out /etc/nginx/cert.crt
+~~~
+
+Here, it will ask you questions to fill out the information for the certificate. Please keep an eye for where it asks you to abbreviate and where it asks you to spell out locations. The most important part of this section is the common name needs to be the fully qualified domain name (FQDN) of the service you are trying to connect to (dashboard.example.com)
+
+From here, we are going to modify the NGINX configuration to set up our reverse proxy.
+
+~~~
+cd /etc/nginx/sites-available/
+sudo cp default default-backup
+sudo nano /etc/nginx/sites-available/default
+~~~
+
+Paste and modify the following script to what you need:
+
+~~~
+server {
+    listen 80;
+    return 301 https://$host$request_uri;
+}
+
+server {
+
+    listen 443;
+    server_name changeme.example.com;
+
+    ssl_certificate           /etc/nginx/cert.crt;
+    ssl_certificate_key       /etc/nginx/cert.key;
+
+    ssl on;
+    ssl_session_cache  builtin:1000  shared:SSL:10m;
+    ssl_protocols  TLSv1.2;
+    ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
+    ssl_prefer_server_ciphers on;
+
+    access_log            /var/log/nginx/changeme.access.log;
+
+    location / {
+
+      proxy_set_header        Host $host;
+      proxy_set_header        X-Real-IP $remote_addr;
+      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header        X-Forwarded-Proto $scheme;
+
+      # Fix the “It appears that your reverse proxy set up is broken" error.
+      proxy_pass          http://localhost:3000;
+      proxy_read_timeout  90;
+
+      proxy_redirect      http://localhost:3000 https://changeme.example.com;
+    }
+  }
+
+~~~
+
 
 ## Resources and References
 
