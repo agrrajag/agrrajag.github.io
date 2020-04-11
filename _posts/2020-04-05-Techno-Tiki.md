@@ -359,3 +359,4 @@ Here are some guides I used to help come up with our end product:
 - <a href="https://pimylifeup.com/raspberry-pi-influxdb/">https://pimylifeup.com/raspberry-pi-influxdb/</a>
 - <a href="https://grafana.com/grafana/download?platform=arm">https://grafana.com/grafana/download?platform=arm</a>
 - <a href="https://grafana.com/grafana/plugins/farski-blendstat-panel/installation">https://grafana.com/grafana/plugins/farski-blendstat-panel/installation</a>
+- <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-with-ssl-as-a-reverse-proxy-for-jenkins">https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-with-ssl-as-a-reverse-proxy-for-jenkins</a>
